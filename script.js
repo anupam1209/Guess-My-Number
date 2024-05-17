@@ -35,6 +35,12 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('.number').textContent = secretNumber;
     document.querySelector('.check').disabled = true;
 
+    if (score > highScore) {
+      highScore = score;
+      //displaying the high score
+      document.querySelector('.highscore').textContent = highScore;
+    }
+
     //manipulate the css styles
     //1. change the background color
     document.querySelector('body').style.backgroundColor = '#60b347';
@@ -90,12 +96,6 @@ document.querySelector('.again').addEventListener('click', function () {
 
   //reset the score
   document.querySelector('.score').textContent = score;
-
-  //assigning the highscore
-  if (score > highScore) highScore = score;
-
-  //displaying the high score
-  document.querySelector('.highscore').textContent = highScore;
 
   //enable the check button
   document.querySelector('.check').disabled = false;
